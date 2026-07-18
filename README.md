@@ -28,3 +28,4 @@ Full conventions: [docs/repo-structure.md](docs/repo-structure.md).
 | Loading data | [load-data.md](docs/load-data.md) | [load_data.py](scripts/load_data.py) |
 | Finding the project root | [finding-project-root.md](docs/finding-project-root.md) | [pandas-basics.ipynb](scripts/pandas-basics.ipynb) |
 | Exploring a DataFrame | [exploring-a-dataframe.md](docs/exploring-a-dataframe.md) | [pandas-basics.ipynb](scripts/pandas-basics.ipynb) |
+| Selecting a column | [selecting-a-column.md](docs/selecting-a-column.md) | — |
