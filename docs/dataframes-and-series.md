@@ -27,13 +27,7 @@ import pandas as pd
 
 df = pd.read_csv("data/orders.csv")     # Load from CSV — our orders.csv fixture
 df = pd.read_excel("data/orders.xlsx")  # Load from Excel — illustrative only, no .xlsx in this repo
-
-data_dict = {
-    "Name": ["Alice", "Bob", "Charlie"],
-    "Age": [25, 30, 35],
-    "Country": ["USA", "Canada", "UK"],
-}
-df = pd.DataFrame(data_dict)            # Load from a dictionary
+df = pd.DataFrame(data)                 # Load from a dictionary — see full example below
 ```
 
 All three end up as a DataFrame — the source format doesn't matter once it's loaded. The dictionary case is the one worth remembering syntax-wise: keys become column names, each value list becomes that column's data.
