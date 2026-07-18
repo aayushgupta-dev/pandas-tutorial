@@ -26,3 +26,4 @@ Full conventions: [docs/repo-structure.md](docs/repo-structure.md).
 |---|---|---|
 | DataFrames and Series | [dataframes-and-series.md](docs/dataframes-and-series.md) | — |
 | Loading data | [load-data.md](docs/load-data.md) | [load_data.py](scripts/load_data.py) |
+| Finding the project root | [finding-project-root.md](docs/finding-project-root.md) | [pandas-basics.ipynb](scripts/pandas-basics.ipynb) |
