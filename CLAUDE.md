@@ -48,10 +48,25 @@ uv run jupyter lab                   # if working through notebook.ipynb instead
 
 Full layout and the rules for maintaining it live in **[docs/repo-structure.md](docs/repo-structure.md) — read it before adding or moving any file.** Summary: `scripts/` holds one runnable file per concept, `docs/` holds a matching 1:1 explanation per script, `data/` holds read-only fixtures only, and `main.py` stays the inert `uv init` stub.
 
+## Learning flow
+
+This is a conversational, coding-along session — not "explain the topic and write the code for the user." Per topic, the loop is:
+
+1. The user watches Tech With Tim cover a concept, then explains it back in chat, in their own words.
+2. **Validate that explanation first, before anything else.** Confirm what's right, correct what's wrong and explain why. Do this even when the explanation is close to correct — the nuance is often the point.
+3. The user writes the code themselves, in a new file under `scripts/` (one file per topic), mirroring what Tim does in the video. **Don't write the lesson script for them.** Your job once it exists is to review it: confirm it's correct, and — per the "not just a tutorial-follow-along" section above — point out the production-grade equivalent where relevant.
+4. Once the script exists and the explanation has been validated, write the paired `docs/<topic>.md` — see [docs/repo-structure.md](docs/repo-structure.md) for how that doc should read (the user's own words, not a formal reference).
+5. Update the README docs table.
+
+If the user revisits a topic later and their understanding has shifted, update that topic's doc to reflect the new understanding rather than leaving the old version in place.
+
+## Mock tests
+
+After every 3-4 new topics (new `docs/*.md` files) since the last one, proactively offer a short recap quiz using the **AskUserQuestion** tool covering those topics — a handful of questions checking whether the concepts actually stuck, not just whether the code runs. Keep it quick and low-stakes, not a formal exam.
+
 ## How to assist the user effectively
 
 - The user is learning pandas from scratch alongside the video — explain *why* a pandas idiom works the way it does (e.g. why boolean masking beats `.iterrows()`), not just *that* it works.
 - Follow the video's progression; don't jump to advanced pandas (multi-indexing, custom accessors, `pd.eval`) before it's reached, unless it's a quick "in production you'd instead..." aside per the section above.
 - When something in the video and current pandas API/best-practice have diverged (e.g. `inplace=True` is discouraged now, chained assignment warnings), flag it — don't silently follow outdated tutorial patterns.
-- Keep the `scripts/` ↔ `docs/` pairing and the README table in sync as new concepts are added — this is the main lever keeping the repo from turning into a pile of unexplained scripts as it grows.
 - If unsure where the user is in the video, check `scripts/`/`docs/` contents and recent commits.
