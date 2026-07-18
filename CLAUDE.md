@@ -40,13 +40,14 @@ Common commands:
 ```
 uv sync                              # install/sync deps from pyproject.toml + uv.lock
 uv add <pkg>                         # add a runtime dependency
-uv run python scripts/<name>.py      # run a concept script
-uv run jupyter lab                   # if working through notebook.ipynb instead of scripts/
+uv add --dev <pkg>                   # add a dev-only dependency (e.g. ipykernel)
+uv run jupyter lab                   # primary workflow — work through scripts/pandas-basics.ipynb
+uv run python scripts/<name>.py      # run a standalone concept script, when one exists
 ```
 
 ## Repository shape
 
-Full layout and the rules for maintaining it live in **[docs/repo-structure.md](docs/repo-structure.md) — read it before adding or moving any file.** Summary: `scripts/` holds one runnable file per topic that had code, `docs/` holds one file per topic discussed (code or not), `data/` holds read-only fixtures only, and `main.py` stays the inert `uv init` stub.
+Full layout and the rules for maintaining it live in **[docs/repo-structure.md](docs/repo-structure.md) — read it before adding or moving any file.** Summary: `scripts/` holds code (`.py` files and/or notebooks — not required to be one-per-topic), `docs/` holds one file per topic discussed (code or not, and regardless of how many docs point back to the same code file), `data/` holds read-only fixtures only, and `main.py` stays the inert `uv init` stub.
 
 ## Learning flow
 
@@ -55,9 +56,9 @@ This is a conversational, coding-along session — not "explain the topic and wr
 1. The user watches Tech With Tim cover a concept, then explains it back in chat, in their own words.
 2. **Validate that explanation first, before anything else.** Confirm what's right, correct what's wrong and explain why. Do this even when the explanation is close to correct — the nuance is often the point.
 3. **Write the `docs/<topic>.md` doc right after validating** — don't wait on code existing first. Not every topic has a code component; some are purely conceptual. See [docs/repo-structure.md](docs/repo-structure.md) for how the doc should read (the user's own words, not a formal reference).
-4. Ask the user whether this topic has a code component to write. If yes, they write it themselves in a new file under `scripts/`, mirroring what Tim does. **Don't write the lesson script for them.** They'll tell you when it exists (or that there isn't one for this topic) — don't assume either way.
-5. Once a script exists, review it: confirm it's correct, and — per the "not just a tutorial-follow-along" section above — point out the production-grade equivalent where relevant. Then update the topic's doc to link back to the script.
-6. Update the README docs table (script column can be empty/"—" for code-less topics).
+4. Ask the user whether this topic has a code component to write. If yes, they write it themselves — usually as a new cell in the shared notebook (`scripts/pandas-basics.ipynb`), sometimes as its own `.py` file under `scripts/` when a concept is cleanly self-contained. **Don't write the lesson code for them.** They'll tell you when it exists (or that there isn't one for this topic) — don't assume either way.
+5. Once code exists, review it: confirm it's correct, and — per the "not just a tutorial-follow-along" section above — point out the production-grade equivalent where relevant. Then update the topic's doc to link back to whichever file the code lives in.
+6. Update the README docs table (script column can be empty/"—" for code-less topics, and multiple rows can point to the same shared notebook).
 
 If the user revisits a topic later and their understanding has shifted, update that topic's doc to reflect the new understanding rather than leaving the old version in place.
 

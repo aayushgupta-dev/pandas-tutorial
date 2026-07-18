@@ -9,13 +9,13 @@ Learning pandas by coding along with Tech With Tim's tutorial.
 
 ```
 uv sync
-uv run python scripts/load_data.py
+uv run jupyter lab   # work through scripts/pandas-basics.ipynb
 ```
 
 ## Structure
 
-- `scripts/` — one script per pandas concept, run directly with `uv run python scripts/<name>.py`.
-- `docs/` — one markdown file per concept, in my own words after talking the concept through. Not every topic has a script — some are conceptual only.
+- `scripts/` — code: mostly `scripts/pandas-basics.ipynb`, a shared notebook where new concepts accumulate as cells, plus the occasional standalone `.py` file for a self-contained concept.
+- `docs/` — one markdown file per concept, in my own words after talking the concept through. Not every topic has code behind it — some are conceptual only — and several docs can point back to the same notebook.
 - `data/` — read-only fixture datasets used by the scripts (`orders.csv`, from the companion repo). Never overwrite these; derived output goes to new files.
 
 Full conventions: [docs/repo-structure.md](docs/repo-structure.md).
