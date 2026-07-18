@@ -46,7 +46,7 @@ uv run jupyter lab                   # if working through notebook.ipynb instead
 
 ## Repository shape
 
-Full layout and the rules for maintaining it live in **[docs/repo-structure.md](docs/repo-structure.md) — read it before adding or moving any file.** Summary: `scripts/` holds one runnable file per concept, `docs/` holds a matching 1:1 explanation per script, `data/` holds read-only fixtures only, and `main.py` stays the inert `uv init` stub.
+Full layout and the rules for maintaining it live in **[docs/repo-structure.md](docs/repo-structure.md) — read it before adding or moving any file.** Summary: `scripts/` holds one runnable file per topic that had code, `docs/` holds one file per topic discussed (code or not), `data/` holds read-only fixtures only, and `main.py` stays the inert `uv init` stub.
 
 ## Learning flow
 
@@ -54,9 +54,10 @@ This is a conversational, coding-along session — not "explain the topic and wr
 
 1. The user watches Tech With Tim cover a concept, then explains it back in chat, in their own words.
 2. **Validate that explanation first, before anything else.** Confirm what's right, correct what's wrong and explain why. Do this even when the explanation is close to correct — the nuance is often the point.
-3. The user writes the code themselves, in a new file under `scripts/` (one file per topic), mirroring what Tim does in the video. **Don't write the lesson script for them.** Your job once it exists is to review it: confirm it's correct, and — per the "not just a tutorial-follow-along" section above — point out the production-grade equivalent where relevant.
-4. Once the script exists and the explanation has been validated, write the paired `docs/<topic>.md` — see [docs/repo-structure.md](docs/repo-structure.md) for how that doc should read (the user's own words, not a formal reference).
-5. Update the README docs table.
+3. **Write the `docs/<topic>.md` doc right after validating** — don't wait on code existing first. Not every topic has a code component; some are purely conceptual. See [docs/repo-structure.md](docs/repo-structure.md) for how the doc should read (the user's own words, not a formal reference).
+4. Ask the user whether this topic has a code component to write. If yes, they write it themselves in a new file under `scripts/`, mirroring what Tim does. **Don't write the lesson script for them.** They'll tell you when it exists (or that there isn't one for this topic) — don't assume either way.
+5. Once a script exists, review it: confirm it's correct, and — per the "not just a tutorial-follow-along" section above — point out the production-grade equivalent where relevant. Then update the topic's doc to link back to the script.
+6. Update the README docs table (script column can be empty/"—" for code-less topics).
 
 If the user revisits a topic later and their understanding has shifted, update that topic's doc to reflect the new understanding rather than leaving the old version in place.
 
