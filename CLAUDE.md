@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Rules
+
+Before doing anything (commits, PRs, any GitHub-related action, or otherwise), check `.claude/rules/` for applicable rules and follow them. Currently:
+
+- [github.md](.claude/rules/github.md) — GitHub-related rules (commit authorship, etc.)
+
+As more rules get added under `.claude/rules/`, check the whole directory, not just the ones listed above.
+
 ## What this repo is
 
 A learning workspace for the user to pick up **pandas** by coding along with Tech With Tim's tutorial:
