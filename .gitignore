@@ -29,6 +29,10 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
+# Data — keep only the committed fixture, ignore derived/generated output
+data/*
+!data/orders.csv
+
 # Editors / OS
 .vscode/
 .idea/
